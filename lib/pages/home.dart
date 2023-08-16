@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class Emotion {
   final String image, title;
@@ -54,6 +55,10 @@ class _HomeScreenState extends State<HomeScreen> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+      statusBarColor: Color.fromRGBO(255, 255, 255, 1),
+      statusBarIconBrightness: Brightness.dark,
+    ));
     return Scaffold(
       body: SingleChildScrollView(
         child: SafeArea(
